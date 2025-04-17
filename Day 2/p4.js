@@ -12,7 +12,8 @@ const server = http.createServer((req,res)=>{
         "password":"5678"
     }]
     res.writeHead(200, {'Content-Type': 'application/html'});
-    res.end(JSON.stringify(data));
+    const userOfData =   data.map((d)=>d.username)
+    res.end(JSON.stringify(userOfData ));
 
 });
 
